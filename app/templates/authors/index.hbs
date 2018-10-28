@@ -1,0 +1,5 @@
+<div class="list-group">
+  {{#each model as |author|}}
+    {{#link-to "authors.author" author class="list-group-item"}}{{author.name}}{{/link-to}}
+  {{/each}}
+</div>

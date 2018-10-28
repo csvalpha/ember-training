@@ -11,15 +11,15 @@ module.exports = function(defaults) {
       whitelist: [
         // 'bs-accordion',
         // 'bs-alert',
-        // 'bs-button',
+        'bs-button',
         // 'bs-button-group'
         // 'bs-carousel',
         // 'bs-collapse',
         // 'bs-dropdown',
-        // 'bs-form',
+        'bs-form',
         // 'bs-modal',
         // 'bs-navbar',
-        // 'bs-nav',
+        'bs-nav',
         // 'bs-popover',
         // 'bs-progress',
         // 'bs-tabs',

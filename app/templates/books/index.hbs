@@ -1,0 +1,13 @@
+<SearchInput
+  class="mb-3"
+
+  @placeholder="Title"
+  @value={{title}}
+  @onChange={{action (mut title)}}
+/>
+
+<div class="list-group">
+  {{#each model as |book|}}
+    {{#link-to "books.book" book class="list-group-item"}}{{book.title}}{{/link-to}}
+  {{/each}}
+</div>
