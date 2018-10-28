@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'ember-lts-app',
+    modulePrefix: 'ember-training',
     environment,
     rootURL: '/',
     locationType: 'auto',
