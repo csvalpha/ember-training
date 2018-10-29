@@ -1,15 +1,55 @@
+<div class="card-body">
+  <p>
+    Below is an overview of the workshop's sections and links to the accompanying pages.
+  </p>
+</div>
+
 <div class="table-responsive">
   <table class="table table-condensed">
     <thead>
       <tr>
-        <th>Onderdeel</th>
+        <th></th>
         <th>Titel</th>
+        <th>Page</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>1.</td>
-        <td></td>
+        <td>Route & Model hook</td>
+        <td>{{#link-to "authors.index"}}Authors{{/link-to}}</td>
+      </tr>
+      <tr>
+        <td>2.</td>
+        <td>Displaying Data</td>
+        <td>{{#link-to "authors.author" 2}}Authors{{/link-to}}</td>
+      </tr>
+      <tr>
+        <td>3.</td>
+        <td>Query Parameters</td>
+        <td>{{#link-to "books.index"}}Books{{/link-to}}</td>
+      </tr>
+      <tr>
+        <td>4.</td>
+        <td>Filtering with <i>JSON:API</i></td>
+        <td>{{#link-to "books.index"}}Books{{/link-to}}</td>
+      </tr>
+      <tr>
+        <td>5.</td>
+        <td>Debounced Filtering with <i>ember-concurrency</i></td>
+        <td>{{#link-to "books.index"}}Books{{/link-to}}</td>
+      </tr>
+      <tr>
+        <td>7.</td>
+        <td>
+          Form Handling &amp; Validation
+          <br>
+          <ol type="a">
+            <li>Creating a new resource</li>
+            <li>Editing an existing resource</li>
+          </ol>
+        </td>
+        <td>{{#link-to "stores.index"}}Stores{{/link-to}}</td>
       </tr>
     </tbody>
   </table>
