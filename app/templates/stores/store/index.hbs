@@ -1,0 +1,22 @@
+<div class="mb-3">
+  {{#link-to "stores.index" class="btn btn-outline-primary"}}Back{{/link-to}}
+  {{#link-to "stores.store.edit" model class="btn btn-outline-primary float-right"}}Edit{{/link-to}}
+</div>
+
+<div class="row">
+  <div class="col-sm-4 text-right"><b>Name: </b></div>
+  <div class="col">{{model.name}}</div>
+</div>
+<div class="row mb-3">
+  <div class="col-sm-4 text-right"><b>Address: </b></div>
+  <div class="col">{{model.address}}</div>
+</div>
+
+<h5>Books</h5>
+<div class="list-group">
+  {{#each model.books as |book|}}
+    {{#link-to "books.book" book class="list-group-item"}}{{book.title}}{{/link-to}}
+  {{else}}
+    <div class="list-group-item text-muted"><i>No books found</i></div>
+  {{/each}}
+</div>

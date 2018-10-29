@@ -9,5 +9,7 @@
 <div class="list-group">
   {{#each model as |book|}}
     {{#link-to "books.book" book class="list-group-item"}}{{book.title}}{{/link-to}}
+  {{else}}
+    <div class="list-group-item text-muted"><i>No books found</i></div>
   {{/each}}
 </div>

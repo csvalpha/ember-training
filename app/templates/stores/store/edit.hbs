@@ -1,0 +1,11 @@
+<div class="card">
+  <h5 class="card-header">
+    Edit store
+  </h5>
+
+  <StoreForm
+    @model={{model}}
+    @onSave={{transition-to "stores.store"}}
+    @onCancel={{transition-to "stores.store"}}
+  />
+</div>

@@ -17,6 +17,14 @@ Router.map(function() {
       path: ':book_id'
     });
   });
+  this.route('stores', function() {
+    this.route('add');
+    this.route('store', {
+      path: ':store_id'
+    }, function() {
+      this.route('edit');
+    });
+  });
 });
 
 export default Router;
