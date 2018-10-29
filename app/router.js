@@ -7,6 +7,8 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('resources');
+
   this.route('authors', function() {
     this.route('author', {
       path: ':author_id'
