@@ -1,7 +1,5 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
-  queryParams: ['title'],
-
-  title: '',
+  // TODO: implement Query Parameters
 });
