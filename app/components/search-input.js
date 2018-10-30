@@ -12,7 +12,7 @@ export default Component.extend({
 
   actions: {
     updateValue(e){
-      this.get('onChange')(e.target.value);
+      this.onChange(e.target.value);
     }
   }
 });
