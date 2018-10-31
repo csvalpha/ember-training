@@ -1,13 +1,21 @@
 <div class="container">
   <h1 class="display-4 mt-3 text-primary">Alpha <b>Ember</b> Workshop</h1>
   <div class="card mt-3">
-    <BsNav @type="pills" class="m-2" as |nav|>
-      <nav.item>{{#nav.link-to "index"}}Home{{/nav.link-to}}</nav.item>
-      <nav.item>{{#nav.link-to "resources"}}Resources{{/nav.link-to}}</nav.item>
-      <nav.item>{{#nav.link-to "authors"}}Authors{{/nav.link-to}}</nav.item>
-      <nav.item>{{#nav.link-to "books"}}Books{{/nav.link-to}}</nav.item>
-      <nav.item>{{#nav.link-to "stores"}}Stores{{/nav.link-to}}</nav.item>
-    </BsNav>
+    <div class="row">
+      <div class="col">
+        <BsNav @type="pills" class="m-2" as |nav|>
+          <nav.item>{{#nav.link-to "index"}}Home{{/nav.link-to}}</nav.item>
+          <nav.item>{{#nav.link-to "resources"}}Resources{{/nav.link-to}}</nav.item>
+        </BsNav>
+      </div>
+      <div class="col">
+        <BsNav @type="pills" class="m-2 justify-content-end" as |nav|>
+          <nav.item>{{#nav.link-to "authors"}}Authors{{/nav.link-to}}</nav.item>
+          <nav.item>{{#nav.link-to "books"}}Books{{/nav.link-to}}</nav.item>
+          <nav.item>{{#nav.link-to "stores"}}Stores{{/nav.link-to}}</nav.item>
+        </BsNav>
+      </div>
+    </div>
 
     <hr class="my-0">
 
