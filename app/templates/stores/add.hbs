@@ -3,5 +3,9 @@
     Add store
   </h5>
 
-  <i><b>TODO:</b> implement store-form component usage</i>
+  <StoreForm
+    @model={{model}}
+    @onSave={{transition-to "stores.index"}}
+    @onCancel={{transition-to "stores.index"}}
+  />
 </div>
