@@ -1,5 +1,7 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-  // TODO: implement model hook
+  model(){
+    return this.store.findAll('author');
+  }
 });
