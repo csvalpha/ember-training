@@ -1,7 +1,8 @@
-import { module, test } from 'qunit';
+import { module } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, click, fillIn } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import test from 'ember-sinon-qunit/test-support/test';
 
 import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
 
@@ -27,7 +28,7 @@ module('Integration | Component | store-form', function(hooks) {
   });
 
   test('it stores the model on save', async function(assert) {
-    assert.expect(1);
+    assert.expect(3);
 
     const store = this.owner.lookup('service:store');
     const model = await store.createRecord('store', {
@@ -35,8 +36,8 @@ module('Integration | Component | store-form', function(hooks) {
       address: 'SomeStreet 10'
     }).save();
 
-    this.set('onSaveAction', () => {});
-    this.set('onCancelAction', () => {});
+    this.set('onSaveAction', this.spy());
+    this.set('onCancelAction', this.spy());
     this.set('model', model);
 
     await render(hbs`<StoreForm
@@ -50,5 +51,7 @@ module('Integration | Component | store-form', function(hooks) {
     const savedModel = await store.findRecord('store', model.id);
 
     assert.equal(savedModel.name, 'TestBookStore2');
+    assert.ok(this.onSaveAction.calledOnce);
+    assert.ok(this.onCancelAction.notCalled);
   });
 });
