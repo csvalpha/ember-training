@@ -24,3 +24,8 @@ script:
   - yarn lint:hbs
   - yarn lint:js
   - yarn test
+
+branches:
+  only:
+    - master
+    - testing
