@@ -1,11 +1,19 @@
 import Component from '@ember/component';
+import { assert } from '@ember/debug';
 
 export default Component.extend({
+
+  init(...args) {
+    this._super(...args);
+
+    assert('<StoreForm/> onCancel is required', typeof this.onCancel === 'function');
+    assert('<StoreForm/> onSave is required', typeof this.onSave === 'function');
+  },
 
   // public
   model: null,
 
-  // hooks
+  // required hooks
   onCancel(){},
   onSave(){},
 
