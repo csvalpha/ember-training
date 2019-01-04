@@ -15,7 +15,7 @@
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
-    "test": "ember test"
+    "test": "ember exam"
   },
   "devDependencies": {
     "@ember/optional-features": "^1.0.0",
@@ -41,6 +41,7 @@
     "ember-concurrency": "^1.1.0",
     "ember-cp-validations": "^4.0.0-beta.9",
     "ember-data": "~3.13.0",
+    "ember-exam": "2.0.1",
     "ember-export-application-global": "^2.0.0",
     "ember-fetch": "^6.7.1",
     "ember-linkify": "^4.1.2",
