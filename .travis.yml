@@ -10,18 +10,22 @@ addons:
   chrome: stable
 
 cache:
-  directories:
-    - $HOME/.npm
+  yarn: true
 
 env:
   global:
     # See https://git.io/vdao3 for details.
     - JOBS=1
 
-before_install:
-  - npm config set spin false
+install:
+  - yarn install --non-interactive
 
 script:
-  - npm run lint:hbs
-  - npm run lint:js
-  - npm test
+  - yarn lint:hbs
+  - yarn lint:js
+  - yarn test
+
+branches:
+  only:
+    - master
+    - testing
