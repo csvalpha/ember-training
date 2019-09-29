@@ -1,7 +1,11 @@
-<i>
-  <b>TODO:</b> implement ember-bootstrap form. See: {{linkify
-    "https://www.ember-bootstrap.com/#/components/forms"
-    "blank"
-    rel="noopener nofollow"
-  }}
-</i>
+<BsForm @model={{model}} @onSubmit={{action "save"}} as |form|>
+  <div class="card-body">
+    <form.element data-test-input-name @controlType="text" @property="name" @label="Name" />
+    <form.element data-test-input-address @controlType="text" @property="address" @label="Address" />
+  </div>
+
+  <div class="card-footer text-right">
+    <BsButton data-test-button-cancel @type="default" @onClick={{action "cancel"}}>Cancel</BsButton>
+    <BsButton data-test-button-save @type="primary" @buttonType="submit">Save</BsButton>
+  </div>
+</BsForm>
