@@ -24,32 +24,32 @@
       <tr>
         <td>1.</td>
         <td>Route & Model hook</td>
-        <td>{{#link-to "authors.index"}}Authors{{/link-to}}</td>
+        <td><LinkTo @route="authors.index">Authors</LinkTo></td>
       </tr>
       <tr>
         <td>2.</td>
         <td>Displaying Data</td>
-        <td>{{#link-to "authors.author" 2}}Authors{{/link-to}}</td>
+        <td><LinkTo @route="authors.author" @model={{2}}>Authors</LinkTo></td>
       </tr>
       <tr>
         <td>3.</td>
         <td>Components</td>
-        <td>{{#link-to "books.index"}}Books{{/link-to}}</td>
+        <td><LinkTo @route="books.index">Books</LinkTo></td>
       </tr>
       <tr>
         <td>4.</td>
         <td>Query Parameters</td>
-        <td>{{#link-to "books.index"}}Books{{/link-to}}</td>
+        <td><LinkTo @route="books.index">Books</LinkTo></td>
       </tr>
       <tr>
         <td>5.</td>
         <td>Filtering with <i>JSON:API</i></td>
-        <td>{{#link-to "books.index"}}Books{{/link-to}}</td>
+        <td><LinkTo @route="books.index">Books</LinkTo></td>
       </tr>
       <tr>
         <td>6.</td>
         <td>Debounced Filtering with <i>ember-concurrency</i></td>
-        <td>{{#link-to "books.index"}}Books{{/link-to}}</td>
+        <td><LinkTo @route="books.index">Books</LinkTo></td>
       </tr>
       <tr>
         <td>7.</td>
@@ -61,7 +61,7 @@
             <li>Editing an existing resource</li>
           </ol>
         </td>
-        <td>{{#link-to "stores.index"}}Stores{{/link-to}}</td>
+        <td><LinkTo @route="stores.index">Stores</LinkTo></td>
       </tr>
     </tbody>
   </table>

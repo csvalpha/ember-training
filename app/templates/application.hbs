@@ -4,15 +4,28 @@
     <div class="row">
       <div class="col">
         <BsNav @type="pills" class="m-2" as |nav|>
-          <nav.item>{{#nav.link-to "index"}}Home{{/nav.link-to}}</nav.item>
-          <nav.item>{{#nav.link-to "resources"}}Resources{{/nav.link-to}}</nav.item>
+          <nav.item>
+            <nav.linkTo @route="index">Home</nav.linkTo>
+          </nav.item>
+
+          <nav.item>
+            <nav.linkTo @route="resources">Resources</nav.linkTo>
+          </nav.item>
         </BsNav>
       </div>
       <div class="col">
         <BsNav @type="pills" class="m-2 justify-content-end" as |nav|>
-          <nav.item>{{#nav.link-to "authors"}}Authors{{/nav.link-to}}</nav.item>
-          <nav.item>{{#nav.link-to "books"}}Books{{/nav.link-to}}</nav.item>
-          <nav.item>{{#nav.link-to "stores"}}Stores{{/nav.link-to}}</nav.item>
+          <nav.item>
+            <nav.linkTo @route="authors">Authors</nav.linkTo>
+          </nav.item>
+
+          <nav.item>
+            <nav.linkTo @route="books">Books</nav.linkTo>
+          </nav.item>
+
+          <nav.item>
+            <nav.linkTo @route="stores">Stores</nav.linkTo>
+          </nav.item>
         </BsNav>
       </div>
     </div>

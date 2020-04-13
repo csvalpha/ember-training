@@ -1,10 +1,10 @@
 <div class="text-right mb-3">
-  {{#link-to "stores.add" class="btn btn-outline-primary"}}Add{{/link-to}}
+  <LinkTo @route="stores.add" class="btn btn-outline-primary">Add</LinkTo>
 </div>
 
 <div class="list-group">
   {{#each model as |store|}}
-    {{#link-to "stores.store" store class="list-group-item"}}{{store.name}}{{/link-to}}
+    <LinkTo @route="stores.store" @model={{store}} class="list-group-item">{{store.name}}</LinkTo>
   {{else}}
     <div class="list-group-item text-muted"><i>No stores found</i></div>
   {{/each}}

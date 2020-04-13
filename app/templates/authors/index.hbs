@@ -1,6 +1,6 @@
 <div class="list-group">
   {{#each model as |author|}}
-    {{#link-to "authors.author" author class="list-group-item"}}{{author.name}}{{/link-to}}
+    <LinkTo @route="authors.author" @model={{author}} class="list-group-item">{{author.name}}</LinkTo>
   {{else}}
     <div class="list-group-item text-muted"><i>No authors found</i></div>
   {{/each}}

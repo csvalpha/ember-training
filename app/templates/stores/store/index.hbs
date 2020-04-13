@@ -1,9 +1,9 @@
 <div class="mb-3">
-  {{#link-to "stores.index" class="btn btn-outline-primary"}}Back{{/link-to}}
+  <LinkTo @route="stores.index" class="btn btn-outline-primary">Back</LinkTo>
 
-  {{#link-to "stores.store.edit" model class="btn btn-outline-primary float-right" }}
+  <LinkTo @route="stores.store.edit" @model={{model}} class="btn btn-outline-primary float-right">
     Edit
-  {{/link-to}}
+  </LinkTo>
 </div>
 
 <div class="row">
@@ -18,7 +18,7 @@
 <h5>Books</h5>
 <div class="list-group">
   {{#each model.books as |book|}}
-    {{#link-to "books.book" book class="list-group-item"}}{{book.title}}{{/link-to}}
+    <LinkTo @route="books.book" @model={{book}} class="list-group-item">{{book.title}}</LinkTo>
   {{else}}
     <div class="list-group-item text-muted"><i>No books found</i></div>
   {{/each}}

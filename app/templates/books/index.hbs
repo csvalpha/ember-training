@@ -2,7 +2,7 @@
 
 <div class="list-group">
   {{#each model as |book|}}
-    {{#link-to "books.book" book class="list-group-item"}}{{book.title}}{{/link-to}}
+    <LinkTo @route="books.book" @model={{book}} class="list-group-item">{{book.title}}</LinkTo>
   {{else}}
     <div class="list-group-item text-muted"><i>No books found</i></div>
   {{/each}}
