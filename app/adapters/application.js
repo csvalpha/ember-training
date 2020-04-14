@@ -1,7 +1,6 @@
-import DS from 'ember-data';
-import AdapterFetch from 'ember-fetch/mixins/adapter-fetch';
+import JSONAPIAdapter from '@ember-data/adapter/json-api';
 
-export default DS.JSONAPIAdapter.extend(AdapterFetch, {
-  host: 'https://jsonapiplayground.reyesoft.com',
-  namespace: 'v2'
-});
+export default class ApplicationAdapter extends JSONAPIAdapter {
+  host = 'https://jsonapiplayground.reyesoft.com';
+  namespace = 'v2';
+}

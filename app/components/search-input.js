@@ -1,19 +1,22 @@
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 import { task, timeout } from 'ember-concurrency';
 
-export default Component.extend({
-  classNames: ['search-input'],
+export default class SearchInputComponent extends Component {
+  classNames = ['search-input'];
 
   // public
-  value: null,
-  placeholder: "Search...",
+  get value() {
+    return this.args.value || null;
+  }
 
-  // hooks
-  onChange(){},
+  get placeholder() {
+    return this.args.placeholder || "Search...";
+  }
 
-  updateValue: task(function * (e){
+  // Debounce changes to the search value before propagating them
+  @(task(function * (e){
     yield timeout(250);
 
-    this.onChange(e.target.value);
-  }).restartable(),
-});
+    this.args.onChange(e.target.value);
+  }).restartable()) updateValue;
+}

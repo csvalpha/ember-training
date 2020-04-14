@@ -1,7 +1,10 @@
 import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
-export default Route.extend({
-  model(){
+export default class AuthorsIndexRoute extends Route {
+  @service store;
+
+  async model(){
     return this.store.findAll('author');
   }
-});
+}

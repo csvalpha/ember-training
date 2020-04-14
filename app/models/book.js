@@ -1,12 +1,10 @@
-import Model from 'ember-data/model';
-import attr from 'ember-data/attr';
-import { belongsTo, hasMany } from 'ember-data/relationships';
+import Model, { attr, hasMany, belongsTo } from '@ember-data/model';
 
-export default Model.extend({
-  title: attr(),
-  datePublished: attr(),
-  isbn: attr(),
+export default class BookModel extends Model {
+  @attr title;
+  @attr datePublished;
+  @attr isbn;
 
-  author: belongsTo('author'),
-  stores: hasMany('store')
-});
+  @hasMany('store') stores;
+  @belongsTo('author') author;
+}

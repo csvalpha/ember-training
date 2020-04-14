@@ -1,12 +1,15 @@
 import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 import { isEmpty } from '@ember/utils';
 
-export default Route.extend({
-  queryParams: {
-    title: { refreshModel: true }
-  },
+export default class BooksIndexRoute extends Route {
+  @service store;
 
-  model(params){
+  queryParams = {
+    title: { refreshModel: true }
+  };
+
+  async model(params){
     const filter = {};
     if(!isEmpty(params.title)){
       filter.title = params.title
@@ -15,4 +18,4 @@ export default Route.extend({
       filter: filter
     });
   }
-});
+}

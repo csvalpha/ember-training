@@ -1,8 +1,8 @@
-import DS from 'ember-data';
+import JSONAPISerializer from '@ember-data/serializer/json-api';
 import { underscore } from '@ember/string';
 
-export default DS.JSONAPISerializer.extend({
+export default class ApplicationSerializer extends JSONAPISerializer {
   keyForAttribute(key) {
     return underscore(key);
   }
-});
+}

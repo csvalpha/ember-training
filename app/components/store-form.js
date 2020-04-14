@@ -1,37 +1,35 @@
-import Component from '@ember/component';
 import { assert } from '@ember/debug';
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
 
-export default Component.extend({
+export default class StoreFormComponent extends Component {
 
-  init(...args) {
-    this._super(...args);
+  constructor(...args) {
+    super(...args);
 
-    assert('<StoreForm/> onCancel is required', typeof this.onCancel === 'function');
-    assert('<StoreForm/> onSave is required', typeof this.onSave === 'function');
-  },
+    assert('<StoreForm/> onCancel is required', typeof this.args.onCancel === 'function');
+    assert('<StoreForm/> onSave is required', typeof this.args.onSave === 'function');
+  }
 
-  // public
-  model: null,
+  get model() {
+    return this.args.model || null;
+  }
 
-  // required hooks
-  onCancel(){},
-  onSave(){},
+  @action
+  cancel(){
+    this.args.onCancel();
+  }
 
-  actions: {
-    cancel(){
-      this.onCancel();
-    },
+  @action
+  async save(model){
+    try {
+      await model.save();
 
-    async save(model){
-      try {
-        await model.save();
-
-        this.onSave(model);
-      } catch (e) {
-        // eslint-disable-next-line no-console
-        console.error(e);
-        alert(`Failed to save "store"`);
-      }
+      this.onSave(model);
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.error(e);
+      alert(`Failed to save "store"`);
     }
   }
-});
+}

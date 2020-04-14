@@ -1,7 +1,9 @@
 import Controller from '@ember/controller';
+import { tracked } from '@glimmer/tracking';
 
-export default Controller.extend({
-  queryParams: ['title'],
+export default class BooksIndexController extends Controller {
+  queryParams = ['title'];
 
-  title: ''
-});
+  @tracked
+  title = '';
+}
