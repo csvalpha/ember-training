@@ -1,11 +1,11 @@
-<BsForm @model={{model}} @onSubmit={{action "save"}} as |form|>
+<BsForm @model={{this.model}} @onSubmit={{this.save}} as |form|>
   <div class="card-body">
     <form.element data-test-input-name @controlType="text" @property="name" @label="Name" />
     <form.element data-test-input-address @controlType="text" @property="address" @label="Address" />
   </div>
 
   <div class="card-footer text-right">
-    <BsButton data-test-button-cancel @type="default" @onClick={{action this.cancel}}>Cancel</BsButton>
-    <BsButton data-test-button-save @type="primary" @buttonType="submit">Save</BsButton>
+    <BsButton data-test-button-cancel @type="default" @onClick={{this.cancel}}>Cancel</BsButton>
+    <BsButton data-test-button-save @type="primary" type="submit">Save</BsButton>
   </div>
 </BsForm>

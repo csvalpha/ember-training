@@ -1,6 +1,5 @@
-import Model from 'ember-data/model';
-import attr from 'ember-data/attr';
-import { hasMany } from 'ember-data/relationships';
+import Model from '@ember-data/model';
+import { attr, hasMany } from '@ember-data/model';
 
 import { validator, buildValidations } from 'ember-cp-validations';
 

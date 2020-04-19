@@ -16,6 +16,6 @@ module('Integration | Component | search-input', function(hooks) {
     await render(hbs`<SearchInput @value={{title}} @onChange={{action (mut title)}} />`);
     await fillIn('input', 'You are not a wizard!');
 
-    assert.equal(this.get('title'), 'You are not a wizard!');
+    assert.equal(this.title, 'You are not a wizard!');
   });
 });

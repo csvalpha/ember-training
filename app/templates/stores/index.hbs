@@ -3,7 +3,7 @@
 </div>
 
 <div class="list-group">
-  {{#each model as |store|}}
+  {{#each @model as |store|}}
     <LinkTo @route="stores.store" @model={{store}} class="list-group-item">{{store.name}}</LinkTo>
   {{else}}
     <div class="list-group-item text-muted"><i>No stores found</i></div>

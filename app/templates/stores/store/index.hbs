@@ -1,23 +1,23 @@
 <div class="mb-3">
   <LinkTo @route="stores.index" class="btn btn-outline-primary">Back</LinkTo>
 
-  <LinkTo @route="stores.store.edit" @model={{model}} class="btn btn-outline-primary float-right">
+  <LinkTo @route="stores.store.edit" @model={{@model}} class="btn btn-outline-primary float-right">
     Edit
   </LinkTo>
 </div>
 
 <div class="row">
   <div class="col-sm-4 text-right"><b>Name: </b></div>
-  <div class="col">{{model.name}}</div>
+  <div class="col">{{@model.name}}</div>
 </div>
 <div class="row mb-3">
   <div class="col-sm-4 text-right"><b>Address: </b></div>
-  <div class="col">{{model.address}}</div>
+  <div class="col">{{@model.address}}</div>
 </div>
 
 <h5>Books</h5>
 <div class="list-group">
-  {{#each model.books as |book|}}
+  {{#each @model.books as |book|}}
     <LinkTo @route="books.book" @model={{book}} class="list-group-item">{{book.title}}</LinkTo>
   {{else}}
     <div class="list-group-item text-muted"><i>No books found</i></div>

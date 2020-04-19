@@ -1,7 +1,7 @@
-<SearchInput @value={{title}} @onChange={{action (mut title)}} />
+<SearchInput @value={{this.title}} @onChange={{this.updateTitle}} />
 
 <div class="list-group">
-  {{#each model as |book|}}
+  {{#each @model as |book|}}
     <LinkTo @route="books.book" @model={{book}} class="list-group-item">{{book.title}}</LinkTo>
   {{else}}
     <div class="list-group-item text-muted"><i>No books found</i></div>

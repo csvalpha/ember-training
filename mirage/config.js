@@ -7,6 +7,7 @@ export default function() {
     return stores.all();
   });
 
+  // eslint-disable-next-line ember/no-get
   this.get('/stores/:id')
   this.patch('/stores/:id', 'store')
   this.post('/stores')

@@ -25,7 +25,7 @@ export default class StoreFormComponent extends Component {
     try {
       await model.save();
 
-      this.onSave(model);
+      this.args.onSave(model);
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error(e);
